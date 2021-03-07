@@ -920,12 +920,14 @@ static struct sk_buff * rcv_ata(struct aoetarget *d, struct aoethread *t, struct
         do {
             case ATA_CMD_PIO_READ:
                 lba &= ATA_LBA28MAX;
+		// fall thru
             case ATA_CMD_PIO_READ_EXT:
                 lba &= 0x0000FFFFFFFFFFFFULL;
                 rw = READ;
                 break;
             case ATA_CMD_PIO_WRITE:
                 lba &= ATA_LBA28MAX;
+		// fall thru
             case ATA_CMD_PIO_WRITE_EXT:
                 lba &= 0x0000FFFFFFFFFFFFULL;
                 rw = WRITE;
