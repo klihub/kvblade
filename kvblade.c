@@ -592,7 +592,7 @@ static ssize_t show_scnt(struct aoetarget *dev, char *page) {
     return sprintf(page, "%Ld\n", dev->scnt);
 }
 
-static struct kvblade_sysfs_entry kvblade_sysfs_scnt = __ATTR(scst, 0644, show_scnt, NULL);
+static struct kvblade_sysfs_entry kvblade_sysfs_scnt = __ATTR(scnt, 0644, show_scnt, NULL);
 
 static ssize_t show_busy(struct aoetarget *dev, char *page) {
     return sprintf(page, "%d\n", count_busy(dev));
